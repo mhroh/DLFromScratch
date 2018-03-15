@@ -1,15 +1,19 @@
 import numpy as np
 import matplotlib.pylab as plt
 
-def step_func(x):
-    return np.array(x > 0, dtype = np.int)
+def relu(x):
+    return np.maximum(0, x)
 
 def draw_graph(x, y):
     plt.plot(x, y)
-    plt.ylim(-0.1, 1.1)
+    plt.ylim(0, 5.0)
     plt.show()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     x = np.arange(-5.0, 5.0, 0.1)
-    y = step_func(x)
+    y = relu(x)
+    print(y)
+
     draw_graph(x, y)
+
