@@ -1,5 +1,5 @@
-from PerceptronAndWithNP import And, NAnd
-from PerceptronOrWithNP import Or
+from chapter2.PerceptronAndWithNP import And, NAnd
+from chapter2.PerceptronOrWithNP import Or
 
 def XOR(x1, x2):
     S1 = not And(x1, x2)
