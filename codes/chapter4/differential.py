@@ -24,7 +24,10 @@ def show_diff_in_graph():
     tf = tangent_line(function_1, 5)
     y2 = tf(x)
 
-    plt.plot(x, y, x, y2)
+    tf1 = tangent_line(function_1, 10)
+    y3 = tf1(x)
+
+    plt.plot(x, y, x, y2, x, y3)
     plt.show()
 
 
