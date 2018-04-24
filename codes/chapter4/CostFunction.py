@@ -20,8 +20,8 @@ http://taewan.kim/post/numpy_sum_axis/#fnref:1
 """
 def cross_entropy_error_for_batch(y, t):
     new_y, new_t, batch_size = cross_entropy_error_common(y, t)
-    return -np.sum(t * np.log(y)) / batch_size
+    return -np.sum(new_t * np.log(new_y)) / batch_size
 
 def cross_entropy_error_for_batch_not_hotencoding(y, t):
     new_y, new_t, batch_size = cross_entropy_error_common(y, t)
-    return -np.sum(np.log(y[np.arange(batch_size), t])) / batch_size
+    return -np.sum(np.log(new_y[np.arange(batch_size), new_t])) / batch_size
