@@ -3,6 +3,7 @@ import matplotlib.pylab as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 
+#numerical_gradient for one variable
 def numerical_diff(f, x):
     h = 1e-4
     return (f(x+h) - f(x-h)) / (2*h)
