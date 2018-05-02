@@ -12,6 +12,9 @@ def cross_entropy_error_common(y, t):
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
 
+    if t.size == y.shape[0]:
+        t = t.argmax(axis=1)
+
     batch_size = y.shape[0]
     return y, t, batch_size
 
@@ -25,3 +28,4 @@ def cross_entropy_error_for_batch(y, t):
 def cross_entropy_error_for_batch_not_hotencoding(y, t):
     new_y, new_t, batch_size = cross_entropy_error_common(y, t)
     return -np.sum(np.log(new_y[np.arange(batch_size), new_t])) / batch_size
+
